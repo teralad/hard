@@ -1,0 +1,2 @@
+class HardQuestion < Question
+end

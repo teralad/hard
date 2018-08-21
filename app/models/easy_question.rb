@@ -1,0 +1,2 @@
+class EasyQuestion < Question
+end
