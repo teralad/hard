@@ -7,3 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
+
+exam = Exam.import(
+            {name: 'Exam 1'}, 
+            {name: 'Exam 2'},
+            {name: 'Exam 3'},
+            {name: 'Exam 4'},
+            {name: 'Exam 5'}
+        )
+subject = Subject.create()

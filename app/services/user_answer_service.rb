@@ -5,7 +5,7 @@ class UserAnswerService
     @user_selected_option = user_selected_option
   end
 
-  def create_user_answer
+  def build_user_answer!
     UserAnswer.create(
       question_id: @user_selected_option.question_id,
       option_id: @user_selected_option.id
