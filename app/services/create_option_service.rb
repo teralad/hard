@@ -6,7 +6,7 @@ class CreateOptionService
             {name: create_random_string}
         ])
         correct_option = question.options.create({name: option_name})
-        question.update_attributes(option_id: correct_option.id)
+        question.update_attributes(correct_option_id: correct_option.id)
     end
 
     private
