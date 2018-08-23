@@ -1,8 +1,7 @@
 class CreateQuestionService
-    def call(chapter:, question_count: 269)
+    def call(chapter:, question_count: 240)
         option_service = CreateOptionService.new
         correct_options = option_service.send(:correct_options)
-        
         questions_list.first(question_count).each_slice(3).with_index do |(easy, medium, hard), i|
             index = i * 3
             easy_question = EasyQuestion.find_or_create_by!(chapter: chapter, name: easy)

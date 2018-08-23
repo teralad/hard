@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'activerecord-import'
+gem 'devise-jwt'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
@@ -38,6 +39,7 @@ group :development do
 end
 group :development, :test do
   gem 'factory_bot_rails'
+  gem 'fabrication'
   gem 'faker'
   gem 'rspec-rails'
 end

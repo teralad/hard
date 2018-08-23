@@ -1,5 +1,4 @@
-class UserAnswer < ApplicationRecord
-    self.table_name = "answers"
+class Answer < ApplicationRecord
     belongs_to :user
     belongs_to :question
 end
