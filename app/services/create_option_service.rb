@@ -1,6 +1,19 @@
 class CreateOptionService
+    def call(question:, option_name:)
+        question.options.create([
+            {name: create_random_string},
+            {name: create_random_string},
+            {name: create_random_string}
+        ])
+        correct_option = question.options.create({name: option_name})
+        question.update_attributes(option_id: correct_option.id)
+    end
 
     private
+    def create_random_string
+        (0...12).map { (('a'..'z').to_a+('A'..'Z').to_a)[rand(52)] }.join
+    end
+
     def correct_options
         [
             "false and nil",
