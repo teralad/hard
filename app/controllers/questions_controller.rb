@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = show_questions(from: params)
+    @questions = show_questions(from: params).page(params[:page]).per(params[:per_page])
   end
 
   # GET /questions/1
