@@ -32,7 +32,6 @@ class AnswersController < ApplicationController
       user_id: current_user.id
     }
     @answer = Answer.new(answer_params)
-    
     respond_to do |format|
       if @answer.save
         format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
