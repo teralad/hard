@@ -14,7 +14,6 @@ gem 'activerecord-import'
 gem 'devise-jwt'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
-gem 'graphql-guard'
 gem 'graphql'
 
 group :development, :test do
@@ -26,6 +25,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
+  gem 'pry-byebug'
+  gem 'pry'  
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -52,3 +53,5 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
 end
+
+gem 'graphiql-rails', group: :development

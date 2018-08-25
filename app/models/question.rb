@@ -7,4 +7,8 @@ class Question < ApplicationRecord
     def exam
         chapter.topic.subject.exam
     end
+
+    def url
+        question_url(self, format: :json)
+    end
 end

@@ -23,6 +23,11 @@ module Hard
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    config.eager_load = Dir["#{Rails.root}/lib", "#{Rails.root}/lib/**/"]
+    config.autoload_paths += Dir["#{Rails.root}/app/models/*/**/"]
+    config.autoload_paths += Dir["#{Rails.root}/app/services/*/**/"]
+    config.autoload_paths += Dir["#{Rails.root}/app/graphql/*/"]
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -1,5 +1,5 @@
 class JwtService
-
+      
     def initialize(user: nil, token: nil)
         @user = user.present? ? user : nil
         @token = token if token.present?
