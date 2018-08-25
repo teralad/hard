@@ -35,5 +35,6 @@ production:
   reconnect: false
   database: hard_production
   pool: 5
-  username: root
+  username: hard
+  password: extra_hard
   host: localhost
