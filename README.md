@@ -8,16 +8,6 @@ provided by the [RailsApps Project](http://railsapps.github.io/).
 
 Rails Composer is supported by developers who purchase our RailsApps tutorials.
 
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
 Ruby on Rails
 -------------
 
@@ -30,21 +20,20 @@ Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.
 
 Getting Started
 ---------------
+Clone the project, run bundle install,
+run rake db:create db:migrate db:seed for test and development.
 
-Documentation and Support
--------------------------
+Sign up.
+Use the token from /users/#ID to send api requests.
 
-Issues
--------------
+Added GraphQL endpoint /graphql,
 
-Similar Projects
-----------------
+The auth for GraphQL is basic auth with Bearer token.
+The following has to be added to headers to send the request.
 
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+I personally use graphql_playground / insomnia to work with GraphQL api's.
+```
+{
+    "Authorization": "Bearer #{token}"
+}
+```
