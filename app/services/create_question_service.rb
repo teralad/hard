@@ -1,12 +1,12 @@
 class CreateQuestionService
-    def call(chapter:, question_count: 240)
+    def call(chapter:, question_count:)
         option_service = CreateOptionService.new
         correct_options = option_service.send(:correct_options)
         questions_list.first(question_count).each_slice(3).with_index do |(easy, medium, hard), i|
             index = i * 3
-            easy_question = EasyQuestion.find_or_create_by!(chapter: chapter, name: easy)
-            medium_question = MediumQuestion.find_or_create_by!(chapter: chapter, name: medium)
-            hard_question = HardQuestion.find_or_create_by!(chapter: chapter, name: hard)
+            easy_question = EasyQuestion.create(chapter: chapter, name: easy)
+            medium_question = MediumQuestion.create(chapter: chapter, name: medium)
+            hard_question = HardQuestion.create(chapter: chapter, name: hard)
             option_service.call(question: easy_question,option_name: correct_options[index])
             option_service.call(question: medium_question,option_name: correct_options[index+1])
             option_service.call(question: hard_question,option_name: correct_options[index+2])

@@ -5,7 +5,7 @@ class VisitorsController < ApplicationController
         if !user_signed_in?
             redirect_to new_user_session_path
         else
-            redirect_to user_summary_path
+            redirect_to questions_path(id: rand(1..9), name: ['subject','topic','chapter'].sample)
         end
     end
 end

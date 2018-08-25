@@ -1,2 +1,8 @@
 <h3>User</h3>
-<p>Email: <%= @user.email if @user.email %></p>
+<% if @user.email %>
+<p>Email: <%= @user.email %></p>
+<p>Token:</p> 
+<div style="width:20px;"><center>
+<%= @user.jw_token.jti %>
+</div>
+<% end %>

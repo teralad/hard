@@ -14,6 +14,8 @@ gem 'activerecord-import'
 gem 'devise-jwt'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+gem 'graphql-guard'
+gem 'graphql'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -45,9 +45,10 @@ ActiveRecord::Schema.define(version: 20180820142723) do
     t.index ["user_id"], name: "index_exams_users_on_user_id"
   end
 
-  create_table "jwt_blacklist", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "jti", null: false
-    t.index ["jti"], name: "index_jwt_blacklist_on_jti"
+  create_table "jw_tokens", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "jti", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_jw_tokens_on_user_id"
   end
 
   create_table "options", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

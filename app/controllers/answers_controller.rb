@@ -28,13 +28,13 @@ class AnswersController < ApplicationController
     #answer_params will contain question_id, user_id and option_id ( if option_id is nil question is skipped)
     answer_params = {
       question_id: params[:question_id],
-      option_id: params[:option_id],
       user_id: current_user.id
     }
-    @answer = Answer.new(answer_params)
+    @answer = Answer.find_or_initialize_by(answer_params)
+    @answer.option_id = params[:option_id]
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
+        format.html { redirect_to @answer, notice: 'Answer was successfully saved.' }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
