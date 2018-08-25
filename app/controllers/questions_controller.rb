@@ -5,8 +5,11 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = show_questions(from: params, user: current_user).page(params[:page]).per_page(10)
-    Rails.logger.debug "Fucking questions are #{@questions.inspect}"
+    begin
+      @questions = show_questions(from: params, user: current_user).page(params[:page]).per_page(10)
+    rescue
+      return {status: 404, body: 'Unauthorized'}
+    end
   end
 
   # GET /questions/1

@@ -25,6 +25,17 @@ class ApplicationController < ActionController::Base
   def authenticate_user!(force: false)
     token_rec = JwToken.where(jti: get_jti_token).first
     @current_user = User.find token_rec.user_id if token_rec.present?
+    unless (current_user || @current_user).present?    
+      render json: {
+        errors: [
+          {
+            status: '400',
+            title: 'Bad Request',
+            code: '100'
+          }
+        ]
+      }, status: :bad_request
+    end  
   end
 
   def get_jti_token
