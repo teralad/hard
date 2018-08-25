@@ -37,4 +37,4 @@ production:
   pool: 5
   username: hard
   password: extra_hard
-  host: localhost
+  host: 127.0.0.1
