@@ -35,6 +35,6 @@ production:
   reconnect: false
   pool: 5
   host: 127.0.0.1
-  database: ENV['CLEARDB_DATABASE_URL']
-  username: ENV['CLEARDB_DATABASE_USERNAME']
-  password: ENV['CLEARDB_DATABASE_PASSWORD']
+  database: <%= ENV['CLEARDB_DATABASE_URL'] %>
+  username: <%= ENV['CLEARDB_DATABASE_USERNAME'] %>
+  password: <%= ENV['CLEARDB_DATABASE_PASSWORD'] %>
