@@ -19,6 +19,8 @@ module Questionable
             { topics: { id: from[:id] }}
         when 'chapter'
             { chapters: { id: from[:id] }}
+        when 'exam'
+            { exams: { id: from[:id] }}
         end
     end
 
